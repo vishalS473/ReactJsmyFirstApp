@@ -2,28 +2,19 @@ import React, { useState } from "react";
 
 export default function SearchForm({initialQuery,onSearch}) {
 
-    const [query,SetQuery] = useState(initialQuery);
-
-    const handleInputChange = (event) => {
-        SetQuery(event.target.value);
-      };
-
-      const handleSearch =() =>{
-        onSearch(query);
+      const handleSearch =(event) =>{
+        event.preventDefault();
+        onSearch(event.target.Search.value);
       }
-
-      const handleKeyPress = (event) => {
-        if (event.key === 'Enter') {
-          onSearch(query);
-        }
-      };
-
+      
     return (
         <div className="container my-5">
             <h1 className="my-5">Search Form</h1>
-            <input type="text" value={query} onChange={handleInputChange} onKeyDown={handleKeyPress} />
-            <button onClick={handleSearch}>Search</button>
+            <form onSubmit={handleSearch}>
+            <input name="Search" type="text" defaultValue ={initialQuery}  />
+            <button type="submit">Search</button>
             <br />
+            </form>
         </div>
     )
 }

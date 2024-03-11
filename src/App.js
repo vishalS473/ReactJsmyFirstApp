@@ -15,7 +15,6 @@ const App = () => {
     setSelectedGenre(genre);
   }
   const handleSearch = (query) => {
-    console.log("Search query:", query);
     if (!query) {
       setSearchResults(Name);
     }
@@ -29,14 +28,14 @@ const App = () => {
   return (
     <div>
       <Counter initialvalue={5} />
-      <SearchForm initialQuery="" onSearch={handleSearch} />
+      <SearchForm initialQuery="Caren" onSearch={handleSearch} />
       <ul>
         {searchResults.map(name => { return <div >{name}</div> })}
       </ul>
       <GenreList
         genres={genres}
         selectedGenre={selectedGenre}
-        onSelect={handleGenreSelect}
+        handleGenreSelect={handleGenreSelect}
       />
     </div>
   );
