@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
 export default function SearchForm({initialQuery,onSearch}) {
-
-      const handleSearch =(event) =>{
+        const handleSearch =(event) =>{
         event.preventDefault();
         onSearch(event.target.Search.value);
       }
@@ -11,8 +10,8 @@ export default function SearchForm({initialQuery,onSearch}) {
         <div className="container my-5">
             <h1 className="my-5">Search Form</h1>
             <form onSubmit={handleSearch}>
-            <input name="Search" type="text" defaultValue ={initialQuery}  />
-            <button type="submit">Search</button>
+            <input name="Search" type="text" defaultValue ={initialQuery} data-testid="my-input"/>
+            <button type="submit" data-testid="submit-button">Search</button>
             <br />
             </form>
         </div>
