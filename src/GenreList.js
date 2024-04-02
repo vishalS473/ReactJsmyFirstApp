@@ -23,7 +23,7 @@ export default function GenreList({ genres, selectedGenre, handleGenreSelect }) 
     }
     return (
       <div className="container my-5">
-         <h1 className="my-5">Movies Genre</h1>
+         <h1 className="my-5" data-testid="GenreList">Movies Genre</h1>
         {genres.map(genre => (
           <button
             key={genre}
