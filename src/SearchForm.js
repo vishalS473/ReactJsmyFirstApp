@@ -8,7 +8,7 @@ export default function SearchForm({initialQuery,onSearch}) {
       
     return (
         <div className="container my-5">
-            <h1 className="my-5">Search Form</h1>
+            <h1 className="my-5" data-testid="SearchForm">Search Form</h1>
             <form onSubmit={handleSearch}>
             <input name="Search" type="text" defaultValue ={initialQuery} data-testid="my-input"/>
             <button type="submit" data-testid="submit-button">Search</button>

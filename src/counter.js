@@ -9,7 +9,7 @@ export default function Counter({initialvalue}){
 
     return(
         <div className="container my-5">
-        <h1 className="my -5">The count is {count}</h1>
+        <h1 className="my -5" data-testid="Counter">The count is {count}</h1>
         <br/>
             <button className="btn btn-success mx-3" onClick={()=>handleIncrement(1)}>Increment</button>
             <button className="btn btn-danger mx-3" onClick={()=>handleIncrement(-1)}>Decrement</button>
